@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>order</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/formstyle.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+
+    <section class="container-fluid">
+        <section class="row" id="error">
+                <form class="form-container" style="padding-left:300px; padding-right:300px" id="form">
+                    <div class="form-group">
+                        <label for="Name">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter name" required></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your Email" required></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="productname"> Product Name</label>
+                        <select class="form-control" id="sell">
+                            <option value="CATERPILLAR FUNGUS">CATERPILLAR FUNGUS</option>
+                            <option value="ASPARAGUS">ASPARAGUS</option>
+                            <option>CALAMUS</option>
+                            <option>AELOVERA</option>
+                            <option>CINNAMON<option>
+                            <option>NEEM</option>
+                            <option>RUDRAKSHYA</option>
+                            <option>GINGER</option>
+                            <option>LEMON</option>
+                            <option>AMALA</option>
+                          </select>
+                        </select>
+                    <div class="form-group">
+                        <label for="productquantity">Product Quantity</label>
+                        <input type="number" class="form-control" id="productquantity" placeholder="Quantity" required></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="cardnumber">Card Number</label>
+                        <input type="number" class="form-control" id="cardnumber" placeholder="Enter card number" required></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="shippingaddress">Shipping Address</label>
+                        <input type="text" class="form-control" id="shippingaddress" placeholder="Enter shippng address" required></input>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="overnight" id="overnight" >
+                        <label class="form-check-label" for="overnight">
+                          Over Night Delivery
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="2day" id="2day">
+                        <label class="form-check-label" for="2day">
+                          2-Days-expedited
+                        </label>
+                      </div>
+
+                    <button id="submit" type="button" class="btn btn-primary">Submit</button>
+                  </form>
+                  <div id="error"></div>
+            </section>
+    </section>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous">
+    </script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous">
+    </script>
+    <script>
+         $(document).ready(function(){
+
+        $('#submit').click(function validate(){
+
+
+          var allRight =true;
+          var name = $("#name").val();
+          if(name.length < 1){
+            alert("NAME EMPTY");
+            allRight = false;
+          }
+          var email = $("#email").val();
+          if(email.length < 1){
+            alert("Email cant be empty");
+              allRight = false;
+          }
+          var productquantity = $("#productquantity").val();
+          if(productquantity < 0 || productquantity.length < 1){
+            alert("Product Quantity must be greaer than 0 and cant be empty");
+
+              allRight = false;
+          }
+          var cardnumber = $("#cardnumber").val();
+          if(cardnumber.length < 13 )
+          {
+            alert("Card numbers must be atleadst 13 digits long");
+              allRight = false;
+          }
+          var shippingaddress = $("#shippingaddress").val();
+          if(shippingaddress.length < 1){
+            alert("Address cant be empty.");
+              allRight = false;
+          }
+
+          if(allRight)
+          {
+            alert("Order Complete");
+            var message = ("Dear "+name+",<br> Your order is now complete and will be delivered  to "+shippingaddress+". Thank you for shopping with us.");
+            var x = 'mailto:' + email + '?subject=Order Confirmation' + '&body=' + message;
+            window.open(x);
+        }
+
+          else {
+            alert("Order not complete");
+          }
+
+        });
+    });
+    </script>
+</body>
+</html>

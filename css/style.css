@@ -1,0 +1,63 @@
+/*fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Princess+Sofia&display=swap')
+:root{
+    --light-gray:black;
+    --primary-color:skyblue;
+    --border:black;
+    --text-color:brown;
+    --oswald:"oswald",cursive;
+    --roboto:"Roboto",sans-serif;
+    --gugi:"Gugi",sans-serif;
+}
+body{
+    background-color:rgba(27,31,34,0.85);
+}
+.primary-color{
+    color:var(--primary-color);
+}
+.bg-primary-color{
+    background-color: var(--primary-color) !important;
+}
+.text-color{
+    color:var(--text-color)
+}
+.font-roboto{
+    font-family: var(--roboto);
+}
+.lightblue{
+    color:lightblue;
+}
+/*header-section*/
+header{
+    background-color:#11E4F1;
+    font-family:var(--gugi);
+    padding:0.em;
+}
+.header-links a{
+    font-size:1em;
+    text-decoration: solid;
+    color:white;
+
+}
+/* navbar*/
+.navbar-nav{
+    padding:0.2em 0.1em;
+    font-size: 20px;
+}
+.navbar-nav.nav-links{
+    font-size:0.95em;
+    color:var(--light-gray) !important;
+}
+.navbar-nav.nav-item.nav-links{
+    padding:0 1.3em;
+}
+.navbar-nav .cart-icon{
+    margin-right: 3em !important;
+}
+.wrapper{
+    padding:40px;
+    text-align: center;
+}
+img {
+    border-radius: 50px;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HERBS HERE</title>
+  <style>
+
+        body{
+        background-color:rgba(27,31,34,0.85);
+    }
+
+    h1{
+        font-size: 50px;
+        line-height:40px;
+        text-align: center;
+        color:white;
+    }
+    .mainview{
+        width:40%;
+        height:300px;
+        position:absolute;
+        left:50%;
+        top:30%;
+
+        transform:translate(-50%,-50%);
+        background-image:url(3a.jpg);
+        background-size:100% 100%;
+        box-shadow: 1px 1px 10px 5px rgb(46, 45, 45);
+        animation:display 9s infinite linear;
+
+    }
+    .mainText{
+        line-height: 2;
+        font-size: 20px;
+    }
+    @keyframes display {
+        0%{background-image:url(3a.jpg);}
+        25%{background-image:url(3b.jpg);}
+        69%{background-image:url(3c.jpg);}
+    }
+    .parag{
+      padding-top:400px;
+      font-size:1em;
+      color:white;
+      margin: 0 20%;
+    }
+    .mybtn{
+      margin: 1% 40% 2% 40%;
+      font-size: 20px;
+      padding: 1%;
+    }
+    .mybtn:hover{
+      background-color: black;
+      color:white;
+    }
+  </style>
+</head>
+<body>
+  <h1>CALAMUS</h1>
+  <div class="mainview">
+  </div>
+  <div class="parag">
+    <p class="mainText" >
+        Calamus is a plant. The root (rhizome) is used to make medicine. Despite safety concerns, calamus is commonly used by mouth for different stomach problems, including ulcers, inflammation of the stomach lining (gastritis), diarrhea, intestinal gas (flatulence), upset stomach, and many more
+
+    </p>
+  </div>
+  <a href="form.html"><button class="mybtn">SHOP</button></a>
+</body>
+</html>
